@@ -30,12 +30,9 @@ function App() {
   const removeTodo: RemoveTodo = (selectedTodo: Todo) => {
 
       
-        let index = todos.findIndex(todo => todo === selectedTodo)
-        if (index > -1) {
-          todos.splice(index, 1);
-       }
-      
-
+       setTodos(
+          todos.filter(todo => todo !== selectedTodo)
+       );
   
 
   };

@@ -24,8 +24,10 @@ const TodoListItem :React.FC<Props> = ({todo , toggleTodo, removeTodo }) => {
             {todo.text}
             </label>
             <button 
+                type='submit'
                 onClick={() => {
                     removeTodo(todo)
+                    console.log('removed')
                 }}
             >
                 Remove
