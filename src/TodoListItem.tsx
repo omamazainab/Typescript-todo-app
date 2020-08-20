@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import removeImg from './images/delete.png'
 
 
 interface Props {
@@ -8,30 +9,41 @@ interface Props {
 }
 
 
-const TodoListItem :React.FC<Props> = ({todo , toggleTodo, removeTodo }) => {
+const TodoListItem: React.FC<Props> = ({ todo, toggleTodo, removeTodo }) => {
     return (
-        <li>
-            <label 
-                style={{textDecoration: todo.complete ? 'line-through' : undefined}}
-            >
-            <input 
-                type="checkbox" 
+
+
+        <li className="list-item">
+
+            <input
+                id="checkbox"
+                className="checkbox"
+                type="checkbox"
                 checked={todo.complete}
                 onClick={() => {
                     toggleTodo(todo);
                 }}
             />
-            {todo.text}
+
+            <label
+                className="checkbox-label"
+                htmlFor='#checkbox'
+                style={{ textDecoration: todo.complete ? 'line-through' : undefined }}
+            >
+                {todo.text}
             </label>
-            <button 
-                type='submit'
+
+
+
+            <div
+                className="remove-button"
                 onClick={() => {
                     removeTodo(todo)
                     console.log('removed')
                 }}
             >
-                Remove
-            </button>
+                <img src={removeImg} alt="" />
+            </div>
         </li>
     )
 }

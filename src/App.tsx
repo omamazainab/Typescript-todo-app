@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { TodoList } from './TodoList';
 import { AddTodoForm } from './AddTodoForm'
+import header from './Header'
+import './App.css'
+import Header from './Header';
 
 const initialTodos: Todo[] = [
 
@@ -40,6 +43,7 @@ function App() {
 
   return (
     <div>
+      <Header />
       <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />
       <AddTodoForm addTodo={addTodo} />
     </div>
