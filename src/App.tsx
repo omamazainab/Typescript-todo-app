@@ -43,7 +43,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <Header  />
       <TodoList todos={todos} toggleTodo={toggleTodo} removeTodo={removeTodo} />
       <AddTodoForm addTodo={addTodo} />
     </div>
